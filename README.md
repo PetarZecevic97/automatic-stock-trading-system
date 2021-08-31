@@ -1,5 +1,14 @@
 # Automatsko trgovanje na berzi
 
+## Struktura projekta
+
+- data: input podaci
+- figures: grafovi rešenja
+- KNN_prediction: grafovi knn predikcija za neke od parametara
+- LR_figs: grafovi aproksimacija linearnim regresijama za neke od parametara
+- notebooks: jupiter sveske
+- results: rezultati modela
+
 ## Berza
 
 Berze su institucije koje omogućavaju trgovinu hartija od vrednosti. Služe da spoje potražnju i ponudu po adekvatnoj ceni za obe strane, a za sebe uzimaju razliku u ceni (bid ask spread) kao proviziju. Cene akcija osciliraju tokom vremenskog perioda. Cena akcije je cena po kojoj se odvila poslednja transakcija. Trgovac može da kupi po toj ceni a može i da da nalog po nekoj svojoj ceni i da čeka da naiđe drugi trgovac kome ta cena odgovara. Trgovci koji daju naloge najviše utiču na cenu na berzi.
@@ -44,3 +53,7 @@ Mera kvaliteta modela koju koristimo je Sharpe ratio [[7](https://www.investoped
 Skup je podeljen na trening, validaciju i test (out of sample). Na validaciji se nađu najbolji metaparametri u odnosu na Sharpe ratio i ti parametri se iskoriste za trgovanje na test skupu. U modelu se ne trenira ponovo nad treningom i validaciji kada testiramo test skup već se samo nastavlja sa trgovinom gde se stalo. Iako prvi način ima više smisla u pogledu mašinskog učenja, za ovaj konkretan domen u praksi se češće radi na način iskorišćen u ovom modelu.
 
 Napomena: U kodu se prvo izvršava predikcija svih tačaka u testu, pa pravljenje linearnih regresija na osnovu svih tačaka u testu, pa onda trgovanje po danima. Ovako je urađeno zbog logičnije podele koda i u redu je jer iako izračunamo predikcije i linearne regresije unapred, kada trgujemo ne gledamo u budućnost. Odnosno, pravimo se da te vrednosti još uvek nisu realizovane.
+
+## Autor
+
+Petar Zečević 1046/2020
